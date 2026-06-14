@@ -1,0 +1,132 @@
+====================================================
+  NIRMALYA SARKAR TUITION WEBSITE — SETUP GUIDE
+====================================================
+
+FILES IN THIS FOLDER:
+- index.html   → Main website
+- style.css    → All styling
+- script.js    → All interactivity
+- photo.jpg    → ADD THIS: Nirmalya Sir's photo (rename yours to photo.jpg)
+- qr.png       → ADD THIS: UPI QR code image
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 1: ADD PHOTO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Save Nirmalya Sir's photo as "photo.jpg" in this folder
+2. In index.html, find:
+      <div class="photo-initials">NS</div>
+   Replace the entire <div class="hero-photo-placeholder">...</div> with:
+      <img src="photo.jpg" alt="Nirmalya Sarkar" style="width:100px;height:100px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,0.3)">
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 2: ADD UPI QR CODE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Save Nirmalya Sir's GPay/UPI QR screenshot as "qr.png"
+2. In index.html, find:
+      <div class="qr-placeholder-box">...</div>
+   Replace with:
+      <img src="qr.png" alt="UPI QR Code" style="width:200px;height:200px;display:block;margin:0 auto 1rem;">
+3. Also update the UPI ID line:
+      <div class="upi-id">UPI ID: <strong>your-upi@bank</strong></div>
+   Replace "your-upi@bank" with Nirmalya Sir's actual UPI ID
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 3: GOOGLE CALENDAR SETUP (10 minutes)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+A. Make calendar public:
+   1. Open calendar.google.com on Nirmalya Sir's account
+   2. Find his calendar in left sidebar → click 3 dots → Settings
+   3. Under "Access permissions" → tick "Make available to public"
+   4. Click OK
+
+B. Get embed URL:
+   1. Same settings page → scroll to "Integrate calendar"
+   2. Copy the "Calendar ID" (looks like: xyz@gmail.com or a long string)
+   3. Build the URL:
+      https://calendar.google.com/calendar/embed?src=CALENDAR_ID&ctz=Asia%2FKolkata&mode=WEEK&showTitle=0&showNav=1&showPrint=0&showCalendars=0
+
+C. Paste in index.html:
+   Find: src="https://calendar.google.com/calendar/embed?src=REPLACE_WITH_NIRMALYA_CALENDAR_ID..."
+   Replace the entire src value with your URL from step B
+
+D. Automatic reminders:
+   - When Nirmalya Sir adds a class to Google Calendar, he can set reminders
+   - He can also add the student/parent email as a "guest" to each event
+   - The guest will automatically receive calendar invite + email reminders
+   - Set reminders: 24 hours before AND 1 hour before each class
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 4: GOOGLE APPOINTMENT SCHEDULING (Optional)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+This lets students book slots directly into Nirmalya Sir's calendar.
+
+1. Go to calendar.google.com
+2. Click "+ Create" → "Appointment schedule"
+3. Fill in:
+   - Title: "Free Demo Class with Nirmalya Sir"
+   - Duration: 30 minutes
+   - Availability: Mon–Sat, 2:30 PM – 8:00 PM
+4. Click "Open booking page" → copy the link
+5. Add this link as a button in index.html wherever you want
+
+Note: This requires Google Workspace (paid) or Google One for full features.
+Free alternative: Use the WhatsApp enrollment form already on the site.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 5: DEPLOY TO GITHUB PAGES (Free)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Go to github.com → sign in
+2. Click "+" → New repository
+3. Name: nirmalya-tutor (or any name)
+4. Public → Create
+5. Click "uploading an existing file"
+6. Upload ALL files: index.html, style.css, script.js, photo.jpg, qr.png
+7. Click "Commit changes"
+8. Go to Settings → Pages → Branch: main → / (root) → Save
+9. Wait 3–5 minutes
+10. Live at: https://YOURUSERNAME.github.io/nirmalya-tutor/
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 6: CUSTOM DOMAIN (Optional, ~₹500/year)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Buy domain from GoDaddy/Hostinger (e.g. nirmalyatutor.in)
+2. In GitHub repo → Settings → Pages → Custom domain → enter domain
+3. In domain registrar, set DNS:
+   Type A records pointing to GitHub IPs:
+   185.199.108.153
+   185.199.109.153
+   185.199.110.153
+   185.199.111.153
+4. Site goes live at your custom domain within 24 hours
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+HOW THE BOOKING FLOW WORKS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Parent visits website
+  → Reads about Nirmalya Sir, subjects, fees
+  → Uses fee calculator to estimate monthly cost
+  → Fills enrollment form
+  → WhatsApp opens with pre-filled message to Nirmalya Sir
+  → Nirmalya Sir calls/messages back to confirm demo
+  → Demo class happens
+  → Parent pays via UPI QR on website
+  → Nirmalya Sir adds classes to Google Calendar
+  → Calendar on website shows booked slots (live)
+  → Google Calendar sends Nirmalya Sir reminders before each class
+  → Parent gets reminder if added as calendar guest
+
+====================================================
